@@ -37,6 +37,7 @@
 #include <vector>
 using namespace std;
 
+// 二维数组，
 // error
 class Solution {
 public:
@@ -65,7 +66,7 @@ public:
         vector<int> dp(amount + 1, 0);
         dp[0] = 1;
         for (int i = 0; i < coins.size(); i++) { // 遍历物品
-            for (int j = coins[i]; j <= amount; j++) { // 遍历背包,正序是完全背包
+            for (int j = coins[i]; j <= amount; j++) { // 遍历背包, 正序是完全背包
                 dp[j] += dp[j - coins[i]];  //
             }
         }

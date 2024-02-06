@@ -25,23 +25,23 @@ using namespace std;
 
 class Solution {
 public:
-    int coinChange(vector<int>& coins, int amount) {
+    int coinChange(vector<int> &coins, int amount) {
         vector<int> dp(amount + 1, INT_MAX);
         dp[0] = 0;
-        for(int i=0;i<coins.size();i++){
-            for(int j=coins[i];j<=amount;j++){
-                //
+        for (int i = 0; i < coins.size(); i++) {
+            for (int j = coins[i]; j <= amount; j++) {      // 完全背包
                 if (dp[j - coins[i]] != INT_MAX) { // 如果dp[j - coins[i]]是初始值则跳过
                     dp[j] = min(dp[j - coins[i]] + 1,   /*放物品*/
                                 dp[j]);           /*不放物品*/
                 }
             }
-            for(auto &e:dp){
-                cout<<setw(20)<<e;
+            for (auto &e: dp) {
+                cout << setw(20) << e;
             }
-            cout<<endl;
+            cout << endl;
         }
-        if (dp[amount] == INT_MAX) return -1;   //
+        if (dp[amount] == INT_MAX)
+            return -1;   //
         return dp[amount];
     }
 };

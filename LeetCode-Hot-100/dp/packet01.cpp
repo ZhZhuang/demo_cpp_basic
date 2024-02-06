@@ -75,7 +75,7 @@ int main_1() {
  //64 位输出请用 printf("%lld")
 
 
- // 重点账务
+ // 重点掌握
 // 一维滚动数组
 class Soulution_2{
 public:

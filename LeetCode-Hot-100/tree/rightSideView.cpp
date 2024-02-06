@@ -29,7 +29,7 @@ public:
         while(!que.empty()){
             // 每层周后一个元素
             res.push_back((que.back())->val);
-            int count = que.size();
+            int count = que.size(); // 很重要！！！
             for(int i=0;i< count;i++){
                 TreeNode *temp = que.front();
                 que.pop();   // 出队
